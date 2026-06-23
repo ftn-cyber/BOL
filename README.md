@@ -478,6 +478,7 @@ Aman, terpercaya, dan profesional sejak 2021.
 </div>
 
 <script>
+    </script>
 let paketDipilih = "";
 let hargaPaket = 0;
 let detailPaket = "";
@@ -646,7 +647,32 @@ Terima kasih sudah menyewa CR di Battle of Legends! 🙏
 </div>
 `;
 }
+<script type="module">
 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import {
+getFirestore,
+collection,
+addDoc
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+const firebaseConfig = {
+apiKey: "ISI_APIKEY_KAMU",
+authDomain: "battle-of-lagends.firebaseapp.com",
+projectId: "battle-of-lagends",
+storageBucket: "battle-of-lagends.firebasestorage.app",
+messagingSenderId: "77786049476",
+appId: "ISI_APPID_KAMU"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+window.db = db;
+window.addDoc = addDoc;
+window.collection = collection;
+
+</script>
 function kirimWA(orderId,subtotal){
 
 const nama = document.getElementById('nama').value;
